@@ -12,6 +12,8 @@
     "cypress-dev-test-headless-chrome": "npx cypress run --browser chrome --config-file environment/dev.config.js",
     "cypress-dev-test-firefox": "npx cypress open --browser firefox  --config-file environment/dev.config.js",
     "cypress-dev-test-headless-firefox": "npx cypress run --browser firefox --config-file environment/dev.config.js",
+    "cypress-dev-test-headless-electron": "npx cypress run --browser electron --config-file environment/dev.config.js",
+    "cypress-dev-test-electron": "npx cypress open --browser electron  --config-file environment/dev.config.js",
     "cypress-dev-test-headless": "npx cypress run --config-file environment/dev.config.js",
     "cypress-prod-test-headless": "npx cypress run --config-file environment/prod.config.js"
   },
