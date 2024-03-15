@@ -1,0 +1,23 @@
+version: 'cypress-docker-v1'
+services:
+
+  cypress-chrome:
+    environment:
+      CYPRESS_BROWSER: "chrome"
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+  cypress-firefox:
+    environment:
+      CYPRESS_BROWSER: "firefox"
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+  cypress-electron:
+    environment:
+      CYPRESS_BROWSER: "electron"
+    build:
+      context: .
+      dockerfile: Dockerfile
