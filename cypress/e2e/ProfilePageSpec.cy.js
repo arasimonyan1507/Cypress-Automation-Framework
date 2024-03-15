@@ -10,7 +10,7 @@ const profilePageActions = new ProfilePageActions()
 const loginPageActions = new LoginPageActions()
 
 
-describe.only('Check functionality of new refferal code', () => {
+describe('Check functionality of new refferal code', () => {
 
   before("Login via API with admin user credentials.", () => {
     loginPageActions.loginViaAPI(Cypress.env('adminUser'))
@@ -22,8 +22,8 @@ describe.only('Check functionality of new refferal code', () => {
     cy.visit(mystNodes.adminsReferralCodesPage)
   })
 
-  describe.only('Check functionality of cookie pop up', { testIsolation: false }, () => {
-    it.only('Check functionality of cookie setting', () => {
+  describe('Check functionality of cookie pop up', { testIsolation: false }, () => {
+    it('Check functionality of cookie setting', () => {
       cy.clearCookies()
       cy.wait(3000)
       cy.get(profilePage.locators.cookiePopUp.acceptAllButton).click()
@@ -138,7 +138,7 @@ describe.only('Check functionality of new refferal code', () => {
 
 })
 
-describe('Check functionality of referral codes table', () => {
+describe.only('Check functionality of referral codes table', () => {
   before("Login via API with admin user credentials.", () => {
     loginPageActions.loginViaAPI(Cypress.env('adminUser'))
     profilePageActions.preventFriendReferralsModal()
@@ -147,7 +147,7 @@ describe('Check functionality of referral codes table', () => {
   beforeEach("Open admin referrals code page before each test.", () => {
     cy.visit(mystNodes.adminsReferralCodesPage)
   })
-  describe('Check functionality of the editing referral code', { testIsolation: false }, () => {
+  describe.only('Check functionality of the editing referral code', { testIsolation: false }, () => {
 
     it('Check functionality of editing referral code', async () => {
       const dataForEditing = generateReferralCode({ code: 'Test_Code_599', reward: 'empty', capacity: 'empty', threshold: 'empty', expirationDate: 'empty', description: 'empty' })
@@ -160,7 +160,7 @@ describe('Check functionality of referral codes table', () => {
       })
     })
 
-    it('Check functionality of copy buttons.', async () => {
+    it.only('Check functionality of copy buttons.', async () => {
       let copyButtons = await profilePageActions.getCopyButtonsByReferralCode()
       for (let btn of copyButtons) {
         const copiedTextInClipboard = btn.text()
