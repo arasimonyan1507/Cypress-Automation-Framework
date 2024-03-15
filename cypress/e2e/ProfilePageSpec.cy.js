@@ -17,7 +17,7 @@ describe('test', () => {
 })
 
 
-describe.only('Check functionality of new refferal code', () => {
+describe('Check functionality of new refferal code', () => {
 
   before("Login via API with admin user credentials.", () => {
     loginPageActions.loginViaAPI(Cypress.env('adminUser'))
@@ -29,7 +29,7 @@ describe.only('Check functionality of new refferal code', () => {
     cy.visit(mystNodes.adminsReferralCodesPage)
   })
 
-  describe.only('Check functionality of cookie pop up', { testIsolation: false }, () => {
+  describe('Check functionality of cookie pop up', { testIsolation: false }, () => {
     it('Check functionality of cookie setting', () => {
       cy.clearCookies()
       cy.wait(3000)
