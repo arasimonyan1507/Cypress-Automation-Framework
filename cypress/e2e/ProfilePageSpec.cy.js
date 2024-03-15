@@ -36,7 +36,7 @@ describe('Check functionality of new refferal code', () => {
     })
   })
 
-  describe('Check functionality of "Create new referral code" modal', { testIsolation: false }, () => {
+  describe.only('Check functionality of "Create new referral code" modal', { testIsolation: false }, () => {
     // it("Create refferal code with valid data and verify", () => {
     //   generateReferralCode()
     //   cy.fixture('referralCode.json').then((referralCode) => {
@@ -138,7 +138,7 @@ describe('Check functionality of new refferal code', () => {
 
 })
 
-describe.only('Check functionality of referral codes table', () => {
+describe('Check functionality of referral codes table', () => {
   before("Login via API with admin user credentials.", () => {
     loginPageActions.loginViaAPI(Cypress.env('adminUser'))
     profilePageActions.preventFriendReferralsModal()
@@ -147,7 +147,7 @@ describe.only('Check functionality of referral codes table', () => {
   beforeEach("Open admin referrals code page before each test.", () => {
     cy.visit(mystNodes.adminsReferralCodesPage)
   })
-  describe.only('Check functionality of the editing referral code', { testIsolation: false }, () => {
+  describe('Check functionality of the editing referral code', { testIsolation: false }, () => {
 
     it('Check functionality of editing referral code', async () => {
       const dataForEditing = generateReferralCode({ code: 'Test_Code_599', reward: 'empty', capacity: 'empty', threshold: 'empty', expirationDate: 'empty', description: 'empty' })
@@ -160,7 +160,7 @@ describe.only('Check functionality of referral codes table', () => {
       })
     })
 
-    it.only('Check functionality of copy buttons.', async () => {
+    it('Check functionality of copy buttons.', async () => {
       let copyButtons = await profilePageActions.getCopyButtonsByReferralCode()
       for (let btn of copyButtons) {
         const copiedTextInClipboard = btn.text()
